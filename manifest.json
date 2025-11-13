@@ -1,7 +1,7 @@
 {
   "name": "FireGuard Dictionary App",
   "short_name": "FireGuard",
-  "start_url": "index.html",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
@@ -19,4 +19,5 @@
       "type": "image/png"
     }
   ]
+
 }
