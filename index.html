@@ -383,7 +383,7 @@
     <p id="result">Введите слово на английском или русском</p>
 </div>
 
-    <button id="installBtn" style="
+   <button id="installBtn" style="
     display:none;
     padding: 14px 22px;
     font-size: 20px;
@@ -415,27 +415,27 @@ const installMessage = document.getElementById("installMessage");
 function isPwaSupported() {
     const ua = navigator.userAgent.toLowerCase();
 
-    // Firefox — нет
     if (ua.includes("firefox")) return false;
-
-    // Яндекс браузер — нет на ПК
     if (ua.includes("yabrowser") && !ua.includes("android")) return false;
-
-    // Safari — нет beforeinstallprompt
     if (ua.includes("safari") && !ua.includes("chrome")) return false;
 
     return true;
 }
 
-// Если браузер НЕ поддерживает PWA
+// Если браузер НЕ поддерживает установку
 if (!isPwaSupported()) {
     installMessage.style.display = "block";
     installMessage.innerText =
         "Ваш браузер не поддерживает установку приложения.";
 }
 
+// Если приложение уже установлено — скрываем кнопку
+if (window.matchMedia('(display-mode: standalone)').matches) {
+    installBtn.style.display = "none";
+    installMessage.style.display = "none";
+}
 
-// Показываем кнопку только если событие сработало
+// Показываем кнопку при разрешении установки
 window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();
     deferredPrompt = e;
@@ -447,10 +447,20 @@ window.addEventListener("beforeinstallprompt", (e) => {
         installBtn.style.display = "none";
         deferredPrompt.prompt();
 
-        deferredPrompt.userChoice.then(() => {
+        deferredPrompt.userChoice.then((choice) => {
+            if (choice.outcome === "accepted") {
+                installMessage.style.display = "block";
+                installMessage.innerText = "Приложение установлено!";
+            }
             deferredPrompt = null;
         });
     });
+});
+
+// Когда приложение установлено — скрываем кнопку
+window.addEventListener("appinstalled", () => {
+    installBtn.style.display = "none";
+    installMessage.style.display = "none";
 });
 </script>
 <!-- 🔹 Модальное окно (результат перевода) -->
