@@ -262,6 +262,30 @@
             color: #555;
             cursor: pointer;
         }
+
+        .suggestions-box {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    width: 86%;
+    max-width: 350px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -5px;
+    border-radius: 8px;
+    display: none;
+    z-index: 999;
+}
+
+.suggestions-box div {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.suggestions-box div:hover {
+    background: #f0f0f0;
+}
        /* 🌈 Красочная вкладка “О нас” */
 .about-overlay {
     display: none;
@@ -498,29 +522,7 @@
     margin: 30px auto;
     display: block;
 
-    .suggestions-box {
-    position: absolute;
-    background: white;
-    border: 1px solid #ccc;
-    width: 86%;
-    max-width: 350px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: -5px;
-    border-radius: 8px;
-    display: none;
-    z-index: 999;
-}
-
-.suggestions-box div {
-    padding: 10px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.suggestions-box div:hover {
-    background: #f0f0f0;
-}
+    
 ">
 
   Установить приложение
