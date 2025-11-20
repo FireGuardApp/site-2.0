@@ -420,66 +420,13 @@
         }
 
         /* Адаптация карточек под мобильные устройства */
-@media  (max-width: 600px) {
-    .hero {
-        width: 100% !important;
-        padding: 20px !important;
-    }
-
-    header, nav, ul, li {
-        max-width: 100% !important;
-        flex-wrap: wrap !important;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-    /* Заголовок */
-    #about h2 {
-        font-size: 22px;
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
-    /* Контейнер карточек */
-    .features {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding: 10px;
-    }
-
-    /* Каждая карточка */
-    .feature {
-        width: 85%;
-        padding: 15px;
-        border-radius: 12px;
-        font-size: 14px; /* уменьшение общего размера текста */
-    }
-
-    /* Иконки */
-    .feature img {
-        width: 35px;
-        height: 35px;
-        margin-bottom: 10px;
-    }
-
-    /* Заголовки карточек */
-    .feature h3 {
-        font-size: 18px;
-        margin-bottom: 8px;
-    }
-
-    /* Текст внутри карточки */
-    .feature p {
-        font-size: 14px;
-        line-height: 1.4;
-    }
-      .how-app-works {
-        max-width: 100%;
-        margin: 20px auto;
-        padding: 20px 10px;
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+    .how-app-works {
+        max-width: 100%;     /* Блок теперь под ширину экрана */
+        margin: 20px auto;   /* Меньше отступов */
+        padding: 25px 15px;  /* Уменьшить внутренние отступы */
+        border-radius: 15px; /* Мягче на маленьком экране */
     }
 
     .how-app-works h2 {
@@ -488,18 +435,12 @@
     }
 
     .steps {
-        flex-direction: column;
         gap: 15px;
     }
 
     .step {
         padding: 20px;
-        max-width: 90%;
-    }
-
-    .step img {
-        width: 40px;
-        height: 40px;
+        max-width: 100%;
     }
 }
     </style>
