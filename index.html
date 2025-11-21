@@ -368,6 +368,9 @@
     text-align: center;
     padding:50px  20px;
 
+box-sizing: border-box;   /* ← ОБЯЗАТЕЛЬНО */
+    overflow-x: hidden;       /* ← ОБЯЗАТЕЛЬНО */
+    
     background: linear-gradient(135deg, #7eb8fd, #02479d);
     border-radius: 25px;
 }
@@ -387,6 +390,9 @@
     gap: 25px;
     flex-wrap: wrap;
     width: 100%;
+
+    max-width: 100%;
+    box-sizing: border-box;   /* ← важно для мобильных */
 }
 
 /* Каждая карточка — фиксированная одинаковая высота */
@@ -395,10 +401,12 @@
     padding: 50px;
     border-radius: 30px;
 
-    flex: 1;
-    width:100%;
-    max-width: 280px;                /* одинаковая ширина */
-    height: 230px;               /* одинаковая высота */
+       width: 100%;
+    max-width: 280px;
+    box-sizing: border-box;   /* ← важно! */          /* одинаковая высота */
+
+    /* Убираем фиксированную высоту */
+    height: auto;
 
     display: flex;
     flex-direction: column;
