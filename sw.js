@@ -1,4 +1,4 @@
-const CACHE_NAME = "fireguard-cache-v1.0.1";
+const CACHE_NAME = "fireguard-cache-v6";
 
 const ASSETS = [
     "/site-2.0/",
@@ -56,5 +56,6 @@ self.addEventListener("fetch", event => {
         })
     );
 });
+
 
 
