@@ -531,6 +531,7 @@
             <!-- Ссылка оставляем якорной: обработчик JS откроет всплывающую страницу -->
             <li><a href="#about-us">О нас</a></li>
             <li><a href="#box">Эквивалент</a></li>
+            <li><a href="#ios-overlay">Установка на iOS</a></li>
         </ul>
     </nav>
 </header>
@@ -867,19 +868,7 @@ window.addEventListener('keydown', e => {
     }
 });
 
-    <a href="#ios-overlay">Установка на iOS</a>
-    // --- Открытие вкладки "Установка на iOS" ---
-document.querySelector('a[href="#ios-overlay"]').addEventListener('click', function(e){
-    e.preventDefault();
-    document.getElementById("ios-overlay").classList.add("active");
-    document.body.style.overflow = "hidden";
-});
-
-// --- Закрытие вкладки "Установка на iOS" ---
-document.getElementById("close-ios").addEventListener("click", function(){
-    document.getElementById("ios-overlay").classList.remove("active");
-    document.body.style.overflow = "";
-});
+    
 </script>
  
 <script>
@@ -1035,6 +1024,31 @@ document.querySelectorAll(".close-about").forEach(btn => {
         btn.closest(".about-overlay").classList.remove("active");
         document.body.style.overflow = "";
     });
+});
+</script>
+
+<script>
+    // -------- Всплывающая вкладка "Установка на iOS" --------
+const iosOverlay = document.getElementById('ios-overlay');
+const iosLink = document.querySelector('a[href="#ios-overlay"]');
+const closeIos = document.getElementById('close-ios');
+
+iosLink.addEventListener('click', e => {
+    e.preventDefault();
+    iosOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+closeIos.addEventListener('click', () => {
+    iosOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+window.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+        iosOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 });
 </script>
 
