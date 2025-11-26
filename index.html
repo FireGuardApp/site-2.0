@@ -675,7 +675,6 @@ window.addEventListener("appinstalled", () => {
 </div>
 
 <!-- 📱 ВСПЛЫВАЮЩАЯ ВКЛАДКА "УСТАНОВКА НА iOS" -->
-    <a href="#ios-overlay">Установка на iOS</a>
 <div id="ios-overlay" class="about-overlay">
     <button id="close-ios" class="close-about">← Назад</button>
 
@@ -868,6 +867,7 @@ window.addEventListener('keydown', e => {
     }
 });
 
+    <a href="#ios-overlay">Установка на iOS</a>
     // --- Открытие вкладки "Установка на iOS" ---
 document.querySelector('a[href="#ios-overlay"]').addEventListener('click', function(e){
     e.preventDefault();
